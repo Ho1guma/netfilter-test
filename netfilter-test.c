@@ -10,9 +10,7 @@
 #include <string.h>
 
 struct libnet_ipv4_hdr* check_ip_header;
-struct libnet_ipv4_hdr* ip_header;
 struct libnet_tcp_hdr* check_tcp_header;
-struct libnet_tcp_hdr* tcp_header;
 
 char* input;
 int flag=0;
@@ -245,7 +243,7 @@ int main(int argc, char **argv)
 
     printf("closing library handle\n");
     nfq_close(h);
-
+    free(input);
     exit(0);
 }
 
